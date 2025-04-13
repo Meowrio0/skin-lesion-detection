@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>病歷報告</title>
+    <style>
+        body {
+            font-family: "Noto Sans TC", sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        td, th {
+            border: 1px solid #444;
+            padding: 6px 8px;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f0f0f0;
+            text-align: left;
+        }
+        .section-title {
+            font-weight: bold;
+            background-color: #e9e9e9;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>皮膚病變病例報告</h2>
+
+    <table>
+        <tr><th colspan="2" class="section-title">基本資料</th></tr>
+        <tr><th>性別</th><td>{{ gender }}</td></tr>
+        <tr><th>年齡</th><td>{{ age }} 歲</td></tr>
+        <tr><th>病灶位置</th><td>{{ location }}</td></tr>
+        <tr><th>病灶大小</th><td>{{ size }}</td></tr>
+        <tr><th>病程</th><td>{{ duration }}</td></tr>
+        <tr><th>症狀</th><td>{{ symptoms }}</td></tr>
+    </table>
+
+    <table>
+        <tr><th colspan="2" class="section-title">模型推論結果</th></tr>
+        <tr><th>病變類別</th><td>{{ label }}</td></tr>
+        <tr><th>模型信心值</th><td>{{ confidence }}</td></tr>
+    </table>
+
+    <table>
+        <tr><th class="section-title">📋 病例描述</th></tr>
+        <tr><td style="height:150px;">{{ report }}</td></tr>
+    </table>
+
+    <table>
+        <tr><th>醫師簽名</th><td style="height: 50px;"></td></tr>
+        <tr><th>日期</th><td style="height: 30px;"></td></tr>
+    </table>
+</body>
+</html>

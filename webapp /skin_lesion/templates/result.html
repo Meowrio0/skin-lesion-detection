@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>分類結果</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <h2>📋 預測結果</h2>
+
+        <p><strong>病變類別：</strong>{{ label }}</p>
+        <p><strong>模型信心值：</strong>{{ confidence }}</p>
+        <p><strong>病灶位置：</strong>{{ location }}</p>
+        <p><strong>年齡：</strong>{{ age }}</p>
+        <p><strong>性別：</strong>{{ gender }}</p>
+        <p><strong>病程：</strong>{{ duration }}</p>
+        <p><strong>症狀：</strong>{{ symptoms }}</p>
+        <p><strong>病灶大小：</strong>{{ size }}</p>
+
+        <h3>📝 病例報告：</h3>
+        <div class="report-box">
+            {{ report|safe }}
+        </div>
+
+        <div class="btn-group">
+            <a class="btn" href="{% url 'index' %}">🔙 回首頁</a>
+            <a class="btn" href="{% url 'download_pdf' %}?label={{ label }}&confidence={{ confidence }}&location={{ location }}&age={{ age }}&gender={{ gender }}&duration={{ duration }}&symptoms={{ symptoms }}&size={{ size }}&report={{ report|urlencode }}">📥 下載病歷 PDF</a>
+        </div>
+    </div>
+
+</body>
+</html>

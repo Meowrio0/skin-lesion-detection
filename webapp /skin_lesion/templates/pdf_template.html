@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>皮膚病變診斷報告</title>
+    <style>
+        @font-face {
+            font-family: 'NotoSansTC';
+            src: url('file:///{{ BASE_DIR }}/static/fonts/Noto Sans CJK TC Regular.otf') format('opentype');
+        }
+
+        body {
+            font-family: 'NotoSansTC', 'DejaVu Sans', sans-serif;
+            line-height: 1.6;
+            font-size: 14px;
+            margin: 40px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th.section-title {
+            background-color: #e0e0e0;
+            width: 25%;
+            font-weight: bold;
+        }
+
+        .footer-note {
+            font-size: 12px;
+            color: #555;
+            margin-top: 20px;
+            border-top: 1px dashed #aaa;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>皮膚病變病例報告</h2>
+
+<table>
+    <tr>
+        <th class="section-title">病變類別</th>
+        <td>{{ label }}</td>
+    </tr>
+    <tr>
+        <th class="section-title">模型信心值</th>
+        <td>{{ confidence }}</td>
+    </tr>
+    <tr>
+        <th class="section-title">發生部位</th>
+        <td>{{ location }}</td>
+    </tr>
+    <tr>
+        <th class="section-title">年齡</th>
+        <td>{{ age }}</td>
+    </tr>
+    <tr>
+        <th class="section-title">性別</th>
+        <td>{{ gender }}</td>
+    </tr>
+    <tr>
+        <th class="section-title">病程</th>
+        <td>{{ duration }}</td>
+    </tr>
+    <tr>
+        <th class="section-title">症狀</th>
+        <td>{{ symptoms }}</td>
+    </tr>
+    <tr>
+        <th class="section-title">病灶大小</th>
+        <td>{{ size }}</td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <th class="section-title">病歷描述</th>
+    </tr>
+    <tr>
+        <td>{{ report }}</td>
+    </tr>
+</table>
+
+<p class="footer-note">
+※ 本報告為 AI 輔助生成，僅供醫師參考，實際診斷與處置請依臨床專業判斷。
+</p>
+
+</body>
+</html>

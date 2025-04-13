@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+*.pyo
+*.pyd
+*.pkl
+*.log
+
+# Virtual Environments
+env/
+venv/
+skin-env/
+ENV/
+*.env
+
+# Django
+db.sqlite3
+*.sqlite3
+media/
+staticfiles/
+
+# VSCode / IDEs
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# PDF or generated reports
+*.pdf
+
+# model weights or checkpoints
+*.h5
+*.tfliteo
